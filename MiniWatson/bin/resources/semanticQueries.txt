@@ -1,0 +1,13 @@
+1 SELECT count(*) FROM role D, Person P WHERE D.role_id = P.id AND P.name LIKE '%X'
+2 SELECT count(*) FROM Director D, Movie M WHERE D.movie_id = M.id AND M.name = 'X'
+3 SELECT count(*) FROM Person P WHERE P.name LIKE '% X' AND P.pob LIKE '%Y'
+4 SELECT count(*) FROM Oscar o, Movie m WHERE o.movie_id = m.id AND m.name LIKE '%X%' AND o.year = Y AND o.type LIKE 'BEST-PICTURE'
+5 SELECT count(*) FROM Actor A, Movie M, Person P WHERE A.actor_id = P.id AND A.movie_id = M.id AND M.name LIKE '%X%' AND P.name LIKE '% Y'
+6 SELECT count(*) FROM Oscar O, role P WHERE O.role_id = P.id AND P.name LIKE '% X' AND O.year = Y
+7 SELECT count(*) FROM Oscar O, Person P  WHERE O.person_id = P.id AND O.year = X AND P.pob LIKE '%Y%' AND O.type = 'BEST-Z'
+8 SELECT count(*) FROM Oscar O, Actor A, Movie M, Person P WHERE O.movie_id = M.id AND O.movie_id = A.movie_id AND A.actor_id = P.id AND O.type = 'BEST-PICTURE' AND P.name LIKE '% X'
+9 SELECT P.name FROM Director D, Person P, Movie M WHERE D.director_id = P.id AND M.id = D.movie_id AND M.name LIKE '%List%'
+10 SELECT P.name FROM Oscar O, Person P WHERE O.type = 'BEST-X' AND O.year = Y AND O.person_id = P.id
+11 SELECT P.name FROM Oscar O, Person P, Director D WHERE O.type = 'BEST-PICTURE' AND O.year = X AND O.movie_id = D.movie_id AND D.director_id = P.id
+12 SELECT P.name FROM Oscar O, role P WHERE O.type = 'BEST-X' AND O.year = Y AND O.role_id = P.id
+13 SELECT O.year FROM Oscar O, Person P WHERE O.person_id = P.id  AND O.type = 'BEST-X' AND P.name LIKE '% Y'
